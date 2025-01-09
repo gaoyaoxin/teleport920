@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>teleport920</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+
+<!-- css -->
+    <link rel="stylesheet" href="primer.css">
+    <link rel="stylesheet" href="github.css">
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900"> -->
+    <link rel="stylesheet" href="main.css">
+<!-- css -->
+
+</head>
+
+<body>
+    <header class="header gradient text-center">
+        <h1 class="title">teleport920</h1>
+    </header>
+
+<br>
+    <main class="wrap">
+        <hi>HTTP</hi>
+        <div class="input-group">
+            <input id="foo" type="text" value="http://192.168.100.">
+            <span class="input-group-button">
+                <button  class="btn" type="button" id="goto" onclick="javascript:window.location.href=document.getElementById('foo').value;">go!</button>
+                    <!-- <img class="clippy" src="go.svg" width="13" alt="go"> -->
+            </span>
+        </div>
+<br>
+
+
+    <main class="wrap">
+        <hi>FTP</hi>
+        <div class="input-group">
+            <input id="foo2" type="text" value="ftp://192.168.100.">
+            <span class="input-group-button">
+                <button class="btn" type="button" data-clipboard-demo data-clipboard-target="#foo2">copy!</button>
+            </span>
+        </div>
+</main>
+
+
+<script>
+    function moveCursorToEnd() {
+        const input = document.getElementById('foo');
+        const length = input.value.length;
+        // Focus on the input
+        input.focus();
+        // Set the cursor to the end
+        input.setSelectionRange(length, length);
+    }
+    moveCursorToEnd();
+</script>
+
+<script>
+document.getElementById('foo').addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+        document.getElementById('goto').click();
+    }
+});
+</script>
+
+<!-- js -->
+    <script src="clipboard.min.js"></script>
+    <script src="tooltips.js"></script>
+    <script src="demos.js"></script>
+<!-- js -->
+
+
+    </main>
+
+    <footer class="footer gradient text-center">
+        <p class="credits">
+            Made with <span class="love">♥</span> by <a class="footer-link" href="http://github.com/gaoyaoxin">Gao Yaoxin</a>
+        </p>
+        <p class="maintainer">
+            Modified from <a class="footer-link" href="https://github.com/zenorocha/clipboard.js/tree/gh-pages">Clipboardjs.com</a>
+        </p>
+    </footer>
+</body>
+</html>
